@@ -1,8 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState} from 'react';
 import { StyleSheet, Text, View, ScrollView ,Image, Pressable, Button, Alert, ActivityIndicator} from 'react-native';
 
 export default function App() {
+  const [showLoading, setShowLoading] = useState(true)
   const createTwoButtonAlert = () =>
     Alert.alert(
       "Alert Title",
@@ -37,7 +38,7 @@ export default function App() {
   return (
   <ScrollView style={styles.container}>
   <View style={styles.containerText}>
-    <Text style={[styles.margin, styles.textSize]}>coucou</Text>
+    <Text style={[styles.margin, styles.textSize]}>test</Text>
     <Text style={[styles.margin, styles.centerText]}>hello</Text>
     <Text style={[styles.margin, styles.boldText]}>bonjour</Text>
   </View>
@@ -51,10 +52,11 @@ export default function App() {
   </ScrollView>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     backgroundColor:"blue",
+    width:500,
+    height:100
 
    
   },
