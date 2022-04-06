@@ -37,13 +37,15 @@ export default function App() {
     );
   return (
   <ScrollView style={styles.container}>
-  <View style={styles.containerText}>
-    <Text style={[styles.margin, styles.textSize]}>test</Text>
-    <Text style={[styles.margin, styles.centerText]}>hello</Text>
-    <Text style={[styles.margin, styles.boldText]}>bonjour</Text>
+  <View >
+
+   {/* <Image source={require("../test/my-app/assets/konexio-logo_1.png" )} style={{width:250, height: 100}}/> */}
+    <Text style={[styles.margin, styles.textSize, styles.containerText]}>Texte avec taille spécifique</Text>
+    <Text style={[styles.margin, styles.centerText, styles.containerText]}>Texte centré</Text>
+    <Text style={[styles.margin, styles.boldText, styles.containerText, styles.textSize]}>Texte en gras</Text>
+    <Image source={{uri:"https://www.konexio.eu/uploads/1/2/0/2/120245745/konexio-logo_1.png"}} style={[{width:250, height:80}, styles.logo]}/>
   </View>
-  <Image source={{uri:"https://www.konexio.eu/uploads/1/2/0/2/120245745/konexio-logo_1.png"}} style={{width:200, height:100}}/>
-   <Image source={require("../test/my-app/assets/konexio-logo_1.png" )} style={{width:200, height: 100}}/>
+ 
    <Pressable>
       <Button title={"2-Button Alert"} onPress={createTwoButtonAlert} />
       <Button title={"3-Button Alert"} onPress={createThreeButtonAlert} />
@@ -55,20 +57,19 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor:"blue",
-    width:500,
-    height:100
-
-   
+    flex:1,
   },
    containerText:{
      backgroundColor:"white",
-     width:450,
-     height:500
+     width:1200,
+     height:100
+
 
   },
    margin: {
      marginTop:80,
      marginBottom:80,
+     marginLeft:20
   },
    textSize : {
      fontSize:30
@@ -78,6 +79,9 @@ const styles = StyleSheet.create({
   },
     boldText: {
        fontWeight:"bold"
-  }
+  },
+  logo: {
+    margin:"auto"
+  },
 })
 
